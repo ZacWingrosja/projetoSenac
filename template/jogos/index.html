@@ -3,17 +3,16 @@
 {% block content %}
 {% include 'jogos/partials/_menu.html'%}
 
-{% for jogos in cards %}
-<div class="cards">
+{% for jogo in cards %}
     <div class="grid gap-3">
         <div class="container text-center">
             <iv class="row">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img src="">
+                        <img src="{% static '/template/assets/imagens/' %} {{ jogo.image }}" alt="Capa do jogo">
                         <div class="card-body">
-                            <h5 class="card-title">{{ Jogo.nome }}</h5>
-                            <p class="card-text">{{ Jogo.lancamento }}</p>
+                            <h5 class="card-title">{{ jogo.nome }}</h5>
+                            <p class="card-text">{{ jogo.plataforma }}</p>
                             <a href="#" class="btn btn-primary">Comprar</a>
                         </div>
                     </div>
@@ -21,7 +20,6 @@
             </iv>
         </div>
     </div>
-</div>
 {% endfor %}
 
 {% include 'jogos/partials/_footer.html' %}
