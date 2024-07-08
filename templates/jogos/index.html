@@ -3,21 +3,23 @@
 {% block content %}
 {% include 'jogos/partials/_menu.html' %}
 
-<div class="container text-center">
+<div class="container text-center d-flex p-2">
     <div class="row align-items-center">
         {% for jogos in cards %}
         <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card mb-3" style="width: 18rem;">
                 {% if jogos.imagem %}
-                <img src="{{ jogos.imagem.url }}" alt="{{jogos.nome}}">
+                <img class="object-fit-cover" src="{{ jogos.imagem.url }}" alt="{{jogos.nome}}">
                 {% else %}
                 <img src="{% static 'images/default.jpg' %}" alt="Imagem Padrão">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{jogos.nome}}</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text">
+                        {{jogos.plataforma}} <br> {{jogos.genero}}
+
+                    </p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
                 </div>
             </div>
         </div>
