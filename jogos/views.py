@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from jogos.models import Jogo
-def lista_jogos(request):
+# Create your views here.
+def index(request):
     jogos = Jogo.objects.all()
-    return render(request, 'jogos/index.html', {'cards':jogos})
+    return render(request, 'jogos/index.html', {"cards":jogos})
