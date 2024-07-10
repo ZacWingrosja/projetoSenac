@@ -3,30 +3,25 @@
 {% block content %}
 {% include 'jogos/partials/_menu.html' %}
 
-<div class=" c_cards-container container text-center d-flex justify-content-evenly gx-1">
-    <div class="row row-cols-4 align-items-center">
+<div class="container text-center d-flex p-2">
+    <div class="row align-items-center">
         {% for jogos in cards %}
-        <div class="col ">
-            <a href="#" class="#">
-                <div class="card mb-4 shadow-sm" style="width: 18rem;">
-                    {% if jogos.imagem %}
-                    <img class="object-fit-cover rounded-top-3 c_card-img-top " src="{{ jogos.imagem.url }}"
-                         alt="{{jogos.nome}}">
-                    {% else %}
-                    <img class="object-fit-cover rounded-top-3 c_card-img-top" src="{% static 'images/default.jpg' %}"
-                         alt="Imagem Padrão">
-                    {% endif %}
-            </a>
-            <div class="card-body c_card-text">
-                        <h5 class="card-title">{{jogos.nome}}</h5>
-                        <p class="card-text">
-                            {{jogos.plataforma}} <br> {{jogos.genero}}
+        <div class="col">
+            <div class="card mb-3" style="width: 18rem;">
+                {% if jogos.imagem %}
+                <img class="object-fit-cover rounded-top c_card-img-top" src="{{ jogos.imagem.url }}" alt="{{jogos.nome}}">
+                {% else %}
+                <img class="object-fit-cover rounded-top c_card-img-top " src="{% static 'images/default.jpg' %}" alt="Imagem Padrão">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{jogos.nome}}</h5>
+                    <p class="card-text">
+                        {{jogos.plataforma}} <br> {{jogos.genero}}
 
-                        </p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
+                    </p>
+                    <a href="#" class="btn btn-primary">Comprar</a>
                 </div>
-
+            </div>
         </div>
         {% endfor %}
     </div>
