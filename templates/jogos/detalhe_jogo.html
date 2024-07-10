@@ -1,0 +1,12 @@
+{% extends 'jogos/partials/base.html' %}
+
+{% block content %}
+{% include 'jogos/partials/_menu.html' %}
+<div class="container mt-4">
+    <h1>{{ jogo.titulo }}</h1>
+    <img src="{{ jogo.imagem.url }}" class="img-fluid" alt="{{ jogo.titulo }}">
+    <p>{{ jogo.descricao }}</p>
+    <p>Preço: R$ {{ jogo.preco }}</p>
+</div>
+{% include 'jogos/partials/_footer.html' %}
+{% endblock %}

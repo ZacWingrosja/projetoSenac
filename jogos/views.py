@@ -4,3 +4,4 @@ from jogos.models import Jogo
 def index(request):
     jogos = Jogo.objects.all()
     return render(request, 'jogos/index.html', {"cards":jogos})
+
